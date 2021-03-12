@@ -5,7 +5,6 @@ const Posts = require("./posts-model");
 router.get("/", (req, res) => {
   Posts.find()
     .then((data) => {
-      console.log(data);
       res.status(200).json(data);
     })
     .catch((err) => {
@@ -16,8 +15,16 @@ router.get("/", (req, res) => {
     });
 });
 
-router.post("/", (req, res) => {
-  console.log(".post() within router");
+router.post("/", async (req, res) => {
+  console.log(req.body);
+  try {
+    const data = await Posts.insert(req.body);
+    console.log("asdf", data);
+  } catch (err) {
+    console.log(err);
+  }
+
+  // res.send("post was hit!");
 });
 
 router.get("/:id", async (req, res) => {
@@ -38,7 +45,28 @@ router.get("/:id", async (req, res) => {
 });
 
 router.put("/:id", (req, res) => {
-  console.log("time to [PUT]");
+  if (req.body.title === undefined || req.body.contents === undefined) {
+    res
+      .status(400)
+      .json({ message: "Please provide title and contents for the post" });
+  }
+  Posts.update(req.params.id, req.body)
+    .then((data) => {
+      if (data) {
+        // console.log(data)
+        res.status(200).json(data);
+      } else {
+        res
+          .status(404)
+          .json({ message: "The post with the specified ID does not exist" });
+      }
+    })
+    .catch((err) => {
+      console.log(err);
+      res
+        .status(500)
+        .json({ message: "The post information could not be modified" });
+    });
 });
 
 router.delete("/:id", async (req, res) => {

@@ -37,8 +37,8 @@ There are two possible ways to submit your project. Your instructor should have 
 <!-- | 2 | GET    | /api/posts/:id          | Returns **the post object with the specified id**                                                | -->
 | 3 | POST   | /api/posts              | Creates a post using the information sent inside the request body and returns **the newly created post object**  |
 | 4 | PUT    | /api/posts/:id          | Updates the post with the specified id using data from the request body and **returns the modified document**, not the original  |
-| 5 | DELETE | /api/posts/:id          | Removes the post with the specified id and returns the **deleted post object**|
-| 6 | GET    | /api/posts/:id/comments | Returns an **array of all the comment objects** associated with the post with the specified id|
+<!-- | 5 | DELETE | /api/posts/:id          | Removes the post with the specified id and returns the **deleted post object**| -->
+<!-- | 6 | GET    | /api/posts/:id/comments | Returns an **array of all the comment objects** associated with the post with the specified id| -->
 
 <!-- #### 1 [GET] /api/posts
 - If there's an error in retrieving the _posts_ from the database:
@@ -72,28 +72,28 @@ There are two possible ways to submit your project. Your instructor should have 
 
 #### 4 [PUT] /api/posts/:id
 
-- If the _post_ with the specified `id` is not found:
+<!-- - If the _post_ with the specified `id` is not found:
 
   - return HTTP status code `404` (Not Found).
-  - return the following JSON: `{ message: "The post with the specified ID does not exist" }`.
+  - return the following JSON: `{ message: "The post with the specified ID does not exist" }`. -->
 
-- If the request body is missing the `title` or `contents` property:
+<!-- - If the request body is missing the `title` or `contents` property:
 
   - respond with HTTP status code `400` (Bad Request).
-  - return the following JSON: `{ message: "Please provide title and contents for the post" }`.
+  - return the following JSON: `{ message: "Please provide title and contents for the post" }`. -->
 
-- If there's an error when updating the _post_:
+<!-- - If there's an error when updating the _post_: -->
 
-  - respond with HTTP status code `500`.
-  - return the following JSON: `{ message: "The post information could not be modified" }`.
+  <!-- - respond with HTTP status code `500`.
+  - return the following JSON: `{ message: "The post information could not be modified" }`. -->
 
-- If the post is found and the new information is valid:
+<!-- - If the post is found and the new information is valid: -->
 
-  - update the post document in the database using the new information sent in the `request body`.
-  - return HTTP status code `200` (OK).
+  <!-- - update the post document in the database using the new information sent in the `request body`. -->
+  <!-- - return HTTP status code `200` (OK). -->
   - return the newly updated _post_.
 
-#### 5 [DELETE] /api/posts/:id
+<!-- #### 5 [DELETE] /api/posts/:id
 
 - If the _post_ with the specified `id` is not found:
 
@@ -103,7 +103,7 @@ There are two possible ways to submit your project. Your instructor should have 
 - If there's an error in removing the _post_ from the database:
 
   - respond with HTTP status code `500`.
-  - return the following JSON: `{ message: "The post could not be removed" }`.
+  - return the following JSON: `{ message: "The post could not be removed" }`. -->
 
 <!-- #### 6 [GET] /api/posts/:id/comments
 - If the _post_ with the specified `id` is not found:
