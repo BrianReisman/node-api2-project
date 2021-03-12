@@ -33,29 +33,25 @@ There are two possible ways to submit your project. Your instructor should have 
 
 <!-- | N | Method | Endpoint                | Description| -->
 <!-- | - | ------ | ----------------------- |  | -->
-| 1 | GET    | /api/posts              | Returns **an array of all the post objects** contained in the database  |
-| 2 | GET    | /api/posts/:id          | Returns **the post object with the specified id**                                                |
+<!-- | 1 | GET    | /api/posts              | Returns **an array of all the post objects** contained in the database  | -->
+<!-- | 2 | GET    | /api/posts/:id          | Returns **the post object with the specified id**                                                | -->
 | 3 | POST   | /api/posts              | Creates a post using the information sent inside the request body and returns **the newly created post object**  |
 | 4 | PUT    | /api/posts/:id          | Updates the post with the specified id using data from the request body and **returns the modified document**, not the original  |
 | 5 | DELETE | /api/posts/:id          | Removes the post with the specified id and returns the **deleted post object**|
 | 6 | GET    | /api/posts/:id/comments | Returns an **array of all the comment objects** associated with the post with the specified id|
 
 <!-- #### 1 [GET] /api/posts
-
 - If there's an error in retrieving the _posts_ from the database:
   - respond with HTTP status code `500`.
   - return the following JSON: `{ message: "The posts information could not be retrieved" }`. -->
 
-#### 2 [GET] /api/posts/:id
-
+<!-- #### 2 [GET] /api/posts/:id
 - If the _post_ with the specified `id` is not found:
-
   - return HTTP status code `404` (Not Found).
   - return the following JSON: `{ message: "The post with the specified ID does not exist" }`.
-
 - If there's an error in retrieving the _post_ from the database:
   - respond with HTTP status code `500`.
-  - return the following JSON: `{ message: "The post information could not be retrieved" }`.
+  - return the following JSON: `{ message: "The post information could not be retrieved" }`. -->
 
 #### 3 [POST] /api/posts
 
@@ -109,17 +105,13 @@ There are two possible ways to submit your project. Your instructor should have 
   - respond with HTTP status code `500`.
   - return the following JSON: `{ message: "The post could not be removed" }`.
 
-#### 6 [GET] /api/posts/:id/comments
-
+<!-- #### 6 [GET] /api/posts/:id/comments
 - If the _post_ with the specified `id` is not found:
-
   - return HTTP status code `404` (Not Found).
   - return the following JSON: `{ message: "The post with the specified ID does not exist" }`.
-
 - If there's an error in retrieving the _comments_ from the database:
-
   - respond with HTTP status code `500`.
-  - return the following JSON: `{ message: "The comments information could not be retrieved" }`.
+  - return the following JSON: `{ message: "The comments information could not be retrieved" }`. -->
 
 ### Database Persistence Helpers
 
