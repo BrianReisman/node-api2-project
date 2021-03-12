@@ -19,12 +19,11 @@ router.post("/", async (req, res) => {
   console.log(req.body);
   try {
     const data = await Posts.insert(req.body);
-    console.log("asdf", data);
+    data ? res.status(201).json(data) : res.status(400).json({});
   } catch (err) {
     console.log(err);
+    res.status(500).json({});
   }
-
-  // res.send("post was hit!");
 });
 
 router.get("/:id", async (req, res) => {
